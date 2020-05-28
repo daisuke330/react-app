@@ -15,7 +15,7 @@ const Booklist = props => {
                 {
                     bookData === null
                         ? <p>now loading...</p>
-                        : bookData.data.items.map((x, index) => <li key={index}> {x.volumeInfo.title} <img src={x.volumeInfo.imageLinks.thumbnail} alt='画像'></img></li>)
+                        : bookData.data.items.map((x, index) => <li key={index}> {x.volumeInfo.title} <br></br><img src={x.volumeInfo.imageLinks.thumbnail} alt='画像'></img></li>)
                 }
             </ul>
         </div>

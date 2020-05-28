@@ -3,16 +3,13 @@ import Booklist from './components/Booklist.jsx';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 
-
-
+const getDataFromAPI = async keyword => {
+  const requestUrl = 'https://www.googleapis.com/books/v1/volumes?q=intitle:';
+  const result = await axios.get(`${requestUrl}${keyword}`);
+  return result;
+};
 const App = () => {
   const languages = ['React', 'Vue', 'Angular'];
-  const getDataFromAPI = async keyword => {
-    const requestUrl = 'https://www.googleapis.com/books/v1/volumes?q=intitle;'
-    const result = await axios.get(`${requestUrl}${keyword}`);
-    return result;
-  }
-
   return (
     <BrowserRouter>
       <div>
@@ -48,6 +45,7 @@ const App = () => {
       </div >
     </BrowserRouter >
   );
-}
+};
+
 
 export default App;
