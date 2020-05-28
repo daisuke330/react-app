@@ -1,8 +1,6 @@
 //Booklist.jsx
 import React, { useState, useEffect } from 'react';
 
-
-
 const Booklist = props => {
     const [bookData, setBookData] = useState(null);
     useEffect(() => {
